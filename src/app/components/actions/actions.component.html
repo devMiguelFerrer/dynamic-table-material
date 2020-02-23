@@ -1,11 +1,11 @@
 <div class="container-fabs">
-  <button mat-mini-fab color="primary">
+  <button mat-mini-fab color="primary" (click)="onHandlerState(actionState.init)">
     <mat-icon>play_arrow</mat-icon>
   </button>
-  <button mat-mini-fab color="accent">
+  <button mat-mini-fab color="accent" (click)="onHandlerState(actionState.stop)">
     <mat-icon>stop</mat-icon>
   </button>
-  <button mat-mini-fab color="warn">
+  <button mat-mini-fab color="warn" (click)="onHandlerState(actionState.remove)">
     <mat-icon>delete</mat-icon>
   </button>
 </div>

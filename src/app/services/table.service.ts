@@ -9,9 +9,10 @@ export class TableService {
 
   public dataUpdate = new Subject<ICar[]>();
   private dataService: ICar[] = [
-    { name: 'Focus', power: 10, color: 'red' },
-    { name: 'Leon', power: 12, color: 'white' },
-    { name: 'Ferrari', power: 14, color: 'black' }
+    { id: 1, name: 'Ford', power: 10, color: 'red', wheels: 4 },
+    { id: 2, name: 'Seat', power: 12, color: 'white', wheels: 4 },
+    { id: 3, name: 'Audi', power: 13, color: 'yellow', wheels: 4 },
+    { id: 4, name: 'Ferrari', power: 14, color: 'black', wheels: 4 }
   ];
 
   loadData(): void {

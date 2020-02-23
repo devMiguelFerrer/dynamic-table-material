@@ -1,4 +1,4 @@
 <app-table [dataSource]="appDataSource" [displayedColumns]="appDisplayedColumns" [templateRef]="nestedComponentRef"></app-table>
-<ng-template #nestedComponentRef>
-  <app-actions></app-actions>
+<ng-template #nestedComponentRef let-element="element">
+  <app-actions (emitActionState)="handlerAction($event, element)"></app-actions>
 </ng-template>

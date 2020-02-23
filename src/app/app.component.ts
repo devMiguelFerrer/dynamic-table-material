@@ -11,7 +11,7 @@ import { Subscription } from 'rxjs';
 export class AppComponent implements OnInit, OnDestroy {
 
   appDataSource: ICar[];
-  appDisplayedColumns = ['name', 'power', 'color', 'actions'];
+  appDisplayedColumns = ['id', 'name', 'power', 'color', 'wheels', 'actions'];
   tableSubscription: Subscription;
 
   constructor(private tableService: TableService) { }
@@ -21,6 +21,10 @@ export class AppComponent implements OnInit, OnDestroy {
       this.appDataSource = respService;
     });
     this.tableService.loadData();
+  }
+
+  handlerAction(action: string, car: ICar): void {
+    console.log(action, car);
   }
 
   ngOnDestroy(): void {

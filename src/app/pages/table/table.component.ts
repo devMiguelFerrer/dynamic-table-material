@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, EventEmitter, Output, TemplateRef } from '@angular/core';
+import { Component, OnInit, Input, TemplateRef } from '@angular/core';
 import { ICar } from '../../model/Car.model';
 import { ITable } from '../../model/Table.model';
 
@@ -11,9 +11,8 @@ export class TableComponent implements OnInit, ITable<ICar> {
 
   @Input() dataSource: ICar[];
   @Input() showComponent = true;
-  @Output() emitEvent = new EventEmitter<any>();
   @Input() displayedColumns: string[];
-  @Input() templateRef: TemplateRef<any>;
+  @Input() templateRef: TemplateRef<ICar>;
   showActions = false;
   actions = 'actions';
 
@@ -28,7 +27,7 @@ export class TableComponent implements OnInit, ITable<ICar> {
       if (this.displayedColumns === undefined || this.displayedColumns === null) {
         this.displayedColumns = Object.keys(this.dataSource[0]);
       } else {
-        this.showActions = this.displayedColumns.includes('actions');
+        this.showActions = this.displayedColumns.includes(this.actions);
       }
     } else {
       this.showComponent = false;
